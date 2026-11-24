@@ -543,3 +543,28 @@
   .bl-pager .page-numbers{min-width:38px;height:38px;padding-inline:10px;font-size:12px}
   .bl-pager .page-numbers.prev,.bl-pager .page-numbers.next{padding-inline:13px}
 }
+
+
+/* Blog archive hero: keep all hero content horizontally centered. */
+.bl-hero__wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.bl-hero__wrap .bl-meta-eyebrow,
+.bl-hero__wrap .bl-crumb {
+  justify-content: center !important;
+  width: 100%;
+  text-align: center !important;
+}
+
+.bl-hero__wrap h1,
+.bl-hero__wrap .bl-hero__lede {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
