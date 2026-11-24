@@ -1050,3 +1050,14 @@ body .ab-license-verify {
     margin-top: 10px;
   }
 }
+
+
+/* Tighten the excessive top and bottom whitespace around the About intro. */
+body .ab-us {
+  padding-block: clamp(28px, 4vw, 52px);
+}
+@media (max-width: 760px) {
+  body .ab-us {
+    padding-block: 28px;
+  }
+}
