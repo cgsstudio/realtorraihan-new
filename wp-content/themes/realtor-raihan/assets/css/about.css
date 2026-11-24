@@ -1039,3 +1039,14 @@ body .ab-license-verify {
     margin-top: 14px;
   }
 }
+
+
+/* Reduce the gap above the license verification button. */
+body .ab-license-verify {
+  margin-top: 12px;
+}
+@media (max-width: 640px) {
+  body .ab-license-verify {
+    margin-top: 10px;
+  }
+}
