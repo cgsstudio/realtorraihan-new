@@ -203,3 +203,25 @@
     box-sizing: border-box !important;
   }
 }
+
+
+/* Keep the original CTA in the desktop column; place its mobile counterpart after all FAQ items. */
+.fq__cta--after-list {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .fq__left > .fq__cta--desktop {
+    display: none !important;
+  }
+
+  .fq__cta--after-list {
+    display: inline-flex !important;
+    grid-column: 1 / -1;
+    justify-self: start;
+    align-self: start;
+    width: 280px !important;
+    max-width: 100%;
+    margin-top: 22px;
+  }
+}
