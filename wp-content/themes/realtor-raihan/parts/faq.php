@@ -45,5 +45,10 @@ $rows = rr_h_rows( 'faq' );
       <?php endforeach; ?>
     </div>
 
+    <a class="pill pill--gold fq__cta fq__cta--after-list" href="<?php echo esc_url( rr_anchor( 'contact' ) ); ?>">
+      <?php echo esc_html( rr_h( 'fq_cta' ) ); ?>
+      <?php echo rr_arrow(); // phpcs:ignore ?>
+    </a>
+
   </div>
 </section>
