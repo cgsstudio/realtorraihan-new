@@ -22,7 +22,7 @@ function rr_about_defaults() {
 		'hero_img'   => 'gen-office-dusk.webp',
 		'tag'        => 'About us',
 		'h2'         => 'You are not buying a listing. You are buying a <em>decision.</em>',
-		'photo'      => home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' ),
+		'photo'      => 'raihan-beach.webp',
 		'p1'         => 'I am Raihan Shaikh, a senior property consultant in Dubai with Homes 4 Life Real Estate. Five years in this market has taught me one thing: the deal is easy, the decision is hard. So I work the decision first. What the service charge actually costs, what the rental cheques really look like, what resale looks like four years out.',
 		'p2'         => 'Most of my clients start in Business Bay, Downtown or Dubai Marina and end up somewhere they did not expect: JVC, Arjan, a villa in Damac Hills. That is fine. My job is not to sell you a building. It is to make sure the one you pick still makes sense to you in 2030, not just on the day you sign.',
 		'quote'      => 'If a deal is not right for you, I will say so. There is always another one.',
@@ -58,10 +58,11 @@ function rr_about() {
 		$saved = array();
 	}
 	$data = array_merge( rr_about_defaults(), $saved );
-	// Replace the original bundled portrait with the supplied About-page image.
-	if ( empty( $saved['photo'] ) || 'raihan-beach.webp' === $saved['photo'] ) {
-		$data['photo'] = home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' );
+	// Use the supplied local media URL when no license image has been saved yet.
+	if ( empty( $data['license_image'] ) ) {
+		$data['license_image'] = home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' );
 	}
+
 	if ( empty( $data['features'] ) || ! is_array( $data['features'] ) ) {
 		$d                  = rr_about_defaults();
 		$data['features']   = $d['features'];
