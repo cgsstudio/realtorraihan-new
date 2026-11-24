@@ -1615,3 +1615,12 @@ body.rr-wp .rr-page {
     text-align: center !important;
   }
 }
+
+
+/* Mobile homepage hero: remove the full-viewport height constraint. */
+@media (max-width: 767px) {
+  body.home .hero {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
