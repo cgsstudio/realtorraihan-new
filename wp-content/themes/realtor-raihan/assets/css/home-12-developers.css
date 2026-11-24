@@ -11,3 +11,24 @@
 @keyframes dev-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:767px){.dev-marquee{padding:34px 0}.dev-marquee__track{gap:12px;animation-duration:38s}.dev-marquee__item{flex-basis:155px;height:78px;padding:12px 14px;gap:9px}.dev-marquee__item img{width:28px;height:28px;flex-basis:28px}.dev-marquee__item span{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.dev-marquee__track{animation:none}}
+
+/* Mobile: center the developers section heading and keep logo labels aligned. */
+@media (max-width: 767px) {
+  .dev-marquee__head {
+    width: 100%;
+    text-align: center !important;
+    padding-inline: 22px;
+    box-sizing: border-box;
+  }
+
+  .dev-marquee__head h2,
+  .dev-marquee__head .tag {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .dev-marquee__item {
+    justify-content: center;
+    text-align: center;
+  }
+}
