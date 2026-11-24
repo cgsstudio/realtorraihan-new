@@ -709,3 +709,18 @@
   opacity: 1;
   transform: none
 }
+
+/* Mobile hero: use 90vh rather than a full-screen 100vh banner. */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 90vh;
+    min-height: 90svh;
+    height: auto;
+  }
+
+  .hero__main {
+    flex: 1 1 auto;
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}
