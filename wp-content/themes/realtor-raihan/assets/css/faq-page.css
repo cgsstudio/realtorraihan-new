@@ -392,3 +392,23 @@ body.page-id-138 .rr-faq-contact--split .rr-faq-contact__details small{display:b
 body.page-id-138 .rr-faq-contact--split+.rr-faq-disclaimer{margin:20px 0 0!important}
 @media(max-width:900px){body.page-id-138 .rr-faq-contact.rr-faq-contact--split{grid-template-columns:minmax(0,1fr)!important;gap:26px!important;padding:32px!important;border-radius:24px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__main{grid-column:1!important;grid-row:1!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__profile{grid-column:1!important;grid-row:2!important;max-width:440px!important}}
 @media(max-width:600px){body.page-id-138 .rr-faq-contact.rr-faq-contact--split{margin-top:30px!important;padding:25px 20px!important;border-radius:19px!important;gap:22px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__eyebrow{font-size:10px!important;letter-spacing:.13em!important;margin-bottom:13px!important}body.page-id-138 .rr-faq-contact--split h2{font-size:29px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__lead{font-size:13px!important;margin-top:11px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__actions{margin-top:21px!important;gap:9px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__btn{min-height:46px!important;padding:0 17px!important;font-size:12px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__profile{min-height:94px!important;padding:15px!important;gap:13px!important;border-radius:13px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__avatar{flex-basis:48px!important;width:48px!important;height:48px!important;font-size:15px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__details strong{font-size:15px!important}body.page-id-138 .rr-faq-contact--split .rr-faq-contact__details span,body.page-id-138 .rr-faq-contact--split .rr-faq-contact__details small{font-size:11px!important}}
+
+/* Mobile FAQ legal/disclaimer cards: improve paragraph readability. */
+@media (max-width: 767px) {
+  body.page-id-138 .rr-faq-disclaimer {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    padding: 16px 17px !important;
+  }
+
+  body.page-id-138 .rr-faq-disclaimer strong {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 7px !important;
+  }
+
+  body.page-id-138 .rr-faq-disclaimer p {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+}
