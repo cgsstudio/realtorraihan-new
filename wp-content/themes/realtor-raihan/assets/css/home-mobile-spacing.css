@@ -41,3 +41,30 @@
     margin-inline: auto !important;
   }
 }
+
+/* Strictly center every element inside the homepage statistic cards on mobile. */
+@media (max-width: 560px) {
+  body.home #intro .s2__statsGrid > .stat2 {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body.home #intro .s2__statsGrid > .stat2 .stat2__label {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 8px auto 0 !important;
+  }
+
+  body.home #intro .s2__statsGrid > .stat2 .stat2__label b,
+  body.home #intro .s2__statsGrid > .stat2 .stat2__label span {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+}
