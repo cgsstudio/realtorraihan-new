@@ -939,3 +939,103 @@ body .ab-h4l__media img{
     max-height:none!important;margin:0!important;object-fit:cover!important;object-position:center 35%!important;
   }
 }
+
+
+/* Dubai Real Estate License: full-width image with a cleaner presentation. */
+body .ab-license-area {
+  padding: clamp(44px, 6vw, 76px) 22px;
+  background: linear-gradient(180deg, #f8f7f3 0%, #f1f0eb 100%);
+}
+
+body .ab-license-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+body .ab-license-wrap > .tag {
+  margin-bottom: 12px;
+}
+
+body .ab-license-wrap > h2 {
+  margin: 0 auto clamp(24px, 3vw, 36px);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+body .ab-license-frame {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(7px, 1vw, 12px);
+  border: 1px solid rgba(16, 35, 61, .12);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 20px 50px -30px rgba(11, 31, 58, .28);
+  box-sizing: border-box;
+}
+
+body .ab-license-frame img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+body .ab-license-number {
+  width: min(100%, 520px);
+  margin: 18px auto 0;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid rgba(16, 35, 61, .12);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 30px -26px rgba(11, 31, 58, .3);
+  box-sizing: border-box;
+}
+
+body .ab-license-number span {
+  color: #596579;
+  font-size: 14px;
+}
+
+body .ab-license-number strong {
+  color: #10233d;
+  font-size: clamp(20px, 2vw, 25px);
+  letter-spacing: .06em;
+}
+
+body .ab-license-verify {
+  margin-top: 24px;
+}
+
+@media (max-width: 640px) {
+  body .ab-license-area {
+    padding: 34px 14px 42px;
+  }
+
+  body .ab-license-wrap > h2 {
+    font-size: clamp(27px, 7vw, 34px);
+    margin-bottom: 22px;
+  }
+
+  body .ab-license-frame {
+    padding: 5px;
+    border-radius: 12px;
+  }
+
+  body .ab-license-frame img {
+    border-radius: 7px;
+  }
+
+  body .ab-license-number {
+    padding: 15px 16px;
+    margin-top: 14px;
+  }
+}
