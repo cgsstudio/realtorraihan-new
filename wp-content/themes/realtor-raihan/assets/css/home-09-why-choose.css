@@ -260,3 +260,18 @@
     justify-self: start;
   }
 }
+
+
+/* Mobile CTA: enforce compact button width instead of stretching full row. */
+@media (max-width: 767px) {
+  #why-choose .wc__cta {
+    display: inline-flex !important;
+    width: 260px !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    justify-self: start !important;
+    align-self: flex-start !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+  }
+}
