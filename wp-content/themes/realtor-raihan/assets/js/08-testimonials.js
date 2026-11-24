@@ -58,37 +58,52 @@
     var stage = track.closest('.ts__stage');
     if (!stage) return;
 
-    if (window.matchMedia('(min-width:1025px)').matches){
-      cards.forEach(function(card){
-        card.style.height = 'auto';
-        card.style.minHeight = '0';
-        card.style.boxSizing = 'border-box';
-      });
+    // First measure the natural four-line collapsed cards.
+    cards.forEach(function(card){
+      card.style.height = 'auto';
+      card.style.minHeight = '0';
+      card.style.boxSizing = 'border-box';
+    });
+    track.style.height = 'auto';
+    track.style.minHeight = '0';
+    stage.style.minHeight = '';
 
-      var tallest = 0;
-      cards.forEach(function(card){
-        tallest = Math.max(tallest, card.scrollHeight);
-      });
+    var baseHeight = 1;
+    cards.forEach(function(card){
+      var quote = card.querySelector('.tcard__quote');
+      if (quote) quote.classList.remove('is-expanded');
+      baseHeight = Math.max(baseHeight, Math.ceil(card.getBoundingClientRect().height));
+    });
 
-      tallest = Math.max(Math.ceil(tallest), 1);
-      cards.forEach(function(card){
-        card.style.height = tallest + 'px';
-        card.style.minHeight = tallest + 'px';
-      });
-      track.style.height = tallest + 'px';
-      track.style.minHeight = tallest + 'px';
-      stage.style.minHeight = Math.max(tallest, 380) + 'px';
-      return;
+    // Keep every collapsed card identical in height. Only the card whose
+    // Read more control is open is allowed to grow to show its full review.
+    cards.forEach(function(card){
+      card.style.height = baseHeight + 'px';
+      card.style.minHeight = baseHeight + 'px';
+    });
+
+    var expandedCard = cards.find(function(card){
+      var quote = card.querySelector('.tcard__quote');
+      return quote && quote.dataset.expanded === 'true';
+    });
+    var finalHeight = baseHeight;
+
+    if (expandedCard) {
+      var expandedQuote = expandedCard.querySelector('.tcard__quote');
+      expandedQuote.classList.add('is-expanded');
+      var expandedHeight = Math.ceil(expandedCard.scrollHeight);
+      expandedCard.style.height = expandedHeight + 'px';
+      expandedCard.style.minHeight = expandedHeight + 'px';
+      finalHeight = Math.max(baseHeight, expandedHeight);
     }
 
-    // Keep the existing content-based single-card layout on tablet/mobile.
-    cards.forEach(function(card){
-      card.style.height = '';
-      card.style.minHeight = '';
-    });
-    track.style.height = '';
-    track.style.minHeight = '';
-    stage.style.minHeight = '0px';
+    track.style.height = finalHeight + 'px';
+    track.style.minHeight = finalHeight + 'px';
+    if (window.matchMedia('(min-width:1025px)').matches) {
+      stage.style.minHeight = Math.max(finalHeight, 380) + 'px';
+    } else {
+      stage.style.minHeight = finalHeight + 'px';
+    }
   }
 
   function scheduleSizing(){
@@ -103,18 +118,19 @@
 
     function checkLong(){
       quote.classList.remove('is-expanded');
+      quote.dataset.expanded = 'false';
       more.hidden = true;
       more.setAttribute('aria-expanded','false');
       more.textContent = 'Read more';
-      if (window.matchMedia('(max-width:1024px)').matches){
-        more.hidden = quote.scrollHeight <= quote.clientHeight + 3;
-      }
+      // Show Read more only when the review exceeds the four-line preview.
+      more.hidden = quote.scrollHeight <= quote.clientHeight + 3;
     }
 
     more.addEventListener('click', function(e){
       e.preventDefault();
       e.stopPropagation();
       var expanded = quote.classList.toggle('is-expanded');
+      quote.dataset.expanded = expanded ? 'true' : 'false';
       more.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       more.textContent = expanded ? 'Read less' : 'Read more';
       scheduleSizing();
