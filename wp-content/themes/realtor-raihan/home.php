@@ -11,7 +11,13 @@ get_header();
 
 $b = function_exists( 'rr_blog' ) ? rr_blog() : array();
 
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : ( ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1 );
+// WordPress can expose the archive page number through either query var,
+ // depending on whether Blog is configured as the Posts page or a page template.
+$paged = max(
+	1,
+	absint( get_query_var( 'paged' ) ),
+	absint( get_query_var( 'page' ) )
+);
 
 $posts_per_page = 6;
 
@@ -134,8 +140,12 @@ $hero_img = ! empty( $b['hero_img'] ) ? $b['hero_img'] : get_theme_mod( 'rr_blog
         <?php
         echo paginate_links(
             array(
-                'total'     => $blog_query->max_num_pages,
-                'current'   => max( 1, $paged ),
+                // Build pagination URLs from the current Blog archive URL.
+                // This keeps /blog/page/2/ working with the custom WP_Query.
+                'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'format'    => ( get_option( 'permalink_structure' ) ? 'page/%#%/' : '?paged=%#%' ),
+                'total'     => (int) $blog_query->max_num_pages,
+                'current'   => $paged,
                 'mid_size'  => 1,
                 'prev_text' => esc_html__( 'Previous', 'realtor-raihan' ),
                 'next_text' => esc_html__( 'Next', 'realtor-raihan' ),
