@@ -293,3 +293,12 @@
     margin-top: 22px;
   }
 }
+
+
+/* Mobile only: add breathing room between the section heading
+   and the divider above the first benefit row. */
+@media (max-width: 767px) {
+  #why-choose .wc__head h2 {
+    margin-bottom: 12px !important;
+  }
+}
