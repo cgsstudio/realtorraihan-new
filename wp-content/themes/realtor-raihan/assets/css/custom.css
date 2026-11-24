@@ -2420,3 +2420,18 @@ body .bl-meta-eyebrow {
   }
 }
 >>>>>>> 5c870e8ef855f06ed116bb0dca96130b0a77da96
+
+
+/* Mobile homepage hero: content-height layout, not a full-screen 100vh banner. */
+@media (max-width: 767px) {
+  body.home .hero {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  body.home .hero__main {
+    flex: 0 1 auto !important;
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+}
