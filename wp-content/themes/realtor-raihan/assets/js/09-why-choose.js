@@ -11,11 +11,10 @@
   if (!rows.length || !shots.length || !num || !lbl || !rail) return;
   var reduce= window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var cur = 0, swapToken = 0;
-  var fixedImage = 'http://localhost/realtorraihan/wp-content/uploads/2026/11/Confident-Executive-at-Sunset-1-2-Photoroom.webp';
+
+  // Keep the first theme-provided photo visible; hide unused photo stack entries.
   shots.forEach(function(s,n){
     if (n !== 0) { s.hidden = true; return; }
-    var image = s.querySelector('img');
-    if (image) { image.src = fixedImage; image.removeAttribute('srcset'); image.removeAttribute('sizes'); }
     s.classList.add('is-on');
   });
 
@@ -33,17 +32,14 @@
 
     positionRail();
 
-    // caption swap with a small fade, token guard so a stale
-    // timeout can never overwrite a newer label
+    // Caption swap with a small fade and a token guard.
     var token = ++swapToken;
     lbl.classList.add('swap');
     setTimeout(function(){
       if (token !== swapToken) return;
-      lbl.innerHTML = rows[i].dataset.lbl;
+      lbl.textContent = rows[i].dataset.lbl;
       lbl.classList.remove('swap');
     }, reduce ? 0 : 180);
-
-
   }
 
   function positionRail(){
@@ -97,6 +93,4 @@
     });
   },{threshold:.2});
   rows.forEach(function(r){ rowIO.observe(r); });
-
-
 })();
