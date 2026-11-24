@@ -609,3 +609,10 @@
     padding-bottom: 66px !important;
   }
 }
+
+/* Mobile blog hero: add clear space below the fixed site header. */
+@media (max-width: 560px) {
+  .bl-hero {
+    padding-top: 96px !important;
+  }
+}
