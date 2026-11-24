@@ -343,3 +343,28 @@
     margin-bottom: 8px !important;
   }
 }
+
+
+/* Final mobile stats layout override: enforce a true 2-by-2 grid
+   and visible spacing between each card, regardless of generic theme rules. */
+@media (max-width: 560px) {
+  #intro .s2__statsGrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    row-gap: 16px !important;
+    column-gap: 16px !important;
+    align-items: stretch;
+  }
+
+  #intro .s2__statsGrid > .stat2 {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 150px;
+    margin: 0 !important;
+    padding: 18px 10px !important;
+    border: 1px solid rgba(13, 34, 61, .16) !important;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+}
