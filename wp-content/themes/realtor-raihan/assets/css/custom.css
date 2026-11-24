@@ -2396,30 +2396,28 @@ body .bl-meta-eyebrow {
             margin-bottom: 16px !important;
           }
 
-<<<<<<< HEAD
-          body.home .wi--teaser .wi__teaserInner {
-            gap: 16px !important;
-          }
+  body.home .wi--teaser .wi__teaserInner {
+    gap: 16px !important;
+  }
 
-          body.home .wi--teaser .wi__teaserCopy p {
-            margin-top: 12px !important;
-          }
-        }
-=======
   body.home .wi--teaser .wi__teaserCopy p {
     margin-top: 12px !important;
   }
 }
 
-
-/* Mobile homepage hero: add more breathing room above and below the content. */
+/* Mobile homepage hero: content-height layout, not a full-screen 100vh banner. */
 @media (max-width: 767px) {
+  body.home .hero {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
   body.home .hero__main {
-    padding-top: 56px !important;
-    padding-bottom: 72px !important;
+    flex: 0 1 auto !important;
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
   }
 }
->>>>>>> 5c870e8ef855f06ed116bb0dca96130b0a77da96
 
 
 /* Mobile homepage hero: content-height layout, not a full-screen 100vh banner. */
