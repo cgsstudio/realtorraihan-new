@@ -279,3 +279,6 @@
     white-space: normal;
   }
 }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .wi { padding-top: 36px !important; padding-bottom: 36px !important; } }
