@@ -205,9 +205,9 @@
 }
 
 
-/* Keep the original CTA in the desktop column; place its mobile counterpart after all FAQ items. */
+/* Keep the after-list CTA hidden on desktop; reveal it only on mobile. */
 .fq__cta--after-list {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 767px) {
