@@ -98,3 +98,6 @@ img.tcard__av{object-fit:cover;border:0!important;display:block}
   .ts .rv{opacity:1!important;transform:none!important;transition:none!important}
   .tcard,.ts__arrow{transition:none!important}
 }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .ts { padding-top: 36px !important; padding-bottom: 36px !important; } }
