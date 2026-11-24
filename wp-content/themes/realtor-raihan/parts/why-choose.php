@@ -11,7 +11,7 @@ $shots = array(
 	array( 'skyline-dusk-wide.webp', 1200, 750 ),
 	array( 'penthouse-living-sunset.webp', 900, 600 ),
 	array( 'marina-daylight.webp', 900, 600 ),
-	array( 'http://localhost/realtorraihan/wp-content/uploads/2026/11/Confident-Executive-at-Sunset-1-2-Photoroom.webp', 900, 600 ),
+	array( 'penthouse-terrace-dusk.webp', 900, 600 ),
 	array( 'gen-marina-night.webp', 900, 600 ),
 );
 ?>
@@ -37,7 +37,7 @@ $shots = array(
       <div class="wc__media rv" aria-hidden="true">
         <?php foreach ( $shots as $i => $shot ) : ?>
           <figure class="wc__shot<?php echo 0 === $i ? ' is-on' : ''; ?>" data-shot="<?php echo (int) $i; ?>">
-            <img src="<?php echo esc_url( get_theme_mod( 'rr_wc_shot_' . ( $i + 1 ), 4 === $i ? $shot[0] : RR_URI . '/assets/img/' . $shot[0] ) ); ?>" alt="" width="<?php echo (int) $shot[1]; ?>" height="<?php echo (int) $shot[2]; ?>" loading="lazy" decoding="async">
+            <img src="<?php echo esc_url( get_theme_mod( 'rr_wc_shot_' . ( $i + 1 ), RR_URI . '/assets/img/' . $shot[0] ) ); ?>" alt="" width="<?php echo (int) $shot[1]; ?>" height="<?php echo (int) $shot[2]; ?>" loading="lazy" decoding="async">
           </figure>
         <?php endforeach; ?>
 
