@@ -32,3 +32,6 @@
     text-align: center;
   }
 }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .dev-marquee { padding-top: 36px !important; padding-bottom: 36px !important; } }
