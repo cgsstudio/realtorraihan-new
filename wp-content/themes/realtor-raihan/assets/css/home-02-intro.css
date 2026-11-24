@@ -430,3 +430,21 @@
     padding-bottom: 10px;
   }
 }
+
+
+/* Stronger mobile zig-zag: alternate right-column cards are visibly lower.
+   Card dimensions remain identical; only their vertical position changes. */
+@media (max-width: 560px) {
+  #intro .s2__statsGrid {
+    overflow: visible !important;
+    padding-bottom: 22px !important;
+  }
+
+  #intro .s2__statsGrid > .stat2:nth-child(odd) {
+    transform: translateY(0) !important;
+  }
+
+  #intro .s2__statsGrid > .stat2:nth-child(even) {
+    transform: translateY(20px) !important;
+  }
+}
