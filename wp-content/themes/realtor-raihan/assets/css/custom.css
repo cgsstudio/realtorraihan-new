@@ -1664,3 +1664,34 @@ body.rr-wp .rr-page {
     align-items: flex-start !important;
   }
 }
+
+
+/* Mobile homepage FAQ: place the Ask Me Directly CTA after the full FAQ list. */
+@media (max-width: 767px) {
+  body.home #faq .fq__wrap {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.home #faq .fq__left {
+    display: contents !important;
+  }
+
+  body.home #faq .fq__eyebrow { order: 1 !important; }
+  body.home #faq #fq-title { order: 2 !important; }
+  body.home #faq .fq__lede { order: 3 !important; }
+
+  body.home #faq .fq__list {
+    order: 4 !important;
+    width: 100% !important;
+  }
+
+  body.home #faq .fq__cta {
+    order: 5 !important;
+    align-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 24px !important;
+    justify-content: center !important;
+  }
+}
