@@ -22,7 +22,7 @@ function rr_about_defaults() {
 		'hero_img'   => 'gen-office-dusk.webp',
 		'tag'        => 'About us',
 		'h2'         => 'You are not buying a listing. You are buying a <em>decision.</em>',
-		'photo'      => 'raihan-beach.webp',
+		'photo'      => home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' ),
 		'p1'         => 'I am Raihan Shaikh, a senior property consultant in Dubai with Homes 4 Life Real Estate. Five years in this market has taught me one thing: the deal is easy, the decision is hard. So I work the decision first. What the service charge actually costs, what the rental cheques really look like, what resale looks like four years out.',
 		'p2'         => 'Most of my clients start in Business Bay, Downtown or Dubai Marina and end up somewhere they did not expect: JVC, Arjan, a villa in Damac Hills. That is fine. My job is not to sell you a building. It is to make sure the one you pick still makes sense to you in 2030, not just on the day you sign.',
 		'quote'      => 'If a deal is not right for you, I will say so. There is always another one.',
@@ -57,12 +57,27 @@ function rr_about() {
 		$saved = array();
 	}
 	$data = array_merge( rr_about_defaults(), $saved );
+	// Replace the original bundled portrait with the supplied About-page image.
+	if ( empty( $saved['photo'] ) || 'raihan-beach.webp' === $saved['photo'] ) {
+		$data['photo'] = home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' );
+	}
 	if ( empty( $data['features'] ) || ! is_array( $data['features'] ) ) {
 		$d                  = rr_about_defaults();
 		$data['features']   = $d['features'];
 	}
 	return $data;
 }
+
+
+/** Load the WordPress Media Library only on the About page editor. */
+add_action(
+	'admin_enqueue_scripts',
+	function () {
+		if ( isset( $_GET['page'] ) && 'rr-about' === sanitize_key( wp_unslash( $_GET['page'] ) ) ) { // phpcs:ignore
+			wp_enqueue_media();
+		}
+	}
+);
 
 add_action(
 	'admin_menu',
@@ -94,7 +109,12 @@ add_action(
 			if ( 'features' === $key ) {
 				continue;
 			}
-			$clean[ $key ] = isset( $posted[ $key ] ) ? wp_kses_post( trim( (string) $posted[ $key ] ) ) : '';
+			if ( 'photo' === $key ) {
+				$photo_value   = isset( $posted[ $key ] ) ? trim( (string) $posted[ $key ] ) : '';
+				$clean[ $key ] = ctype_digit( $photo_value ) ? absint( $photo_value ) : esc_url_raw( $photo_value );
+			} else {
+				$clean[ $key ] = isset( $posted[ $key ] ) ? wp_kses_post( trim( (string) $posted[ $key ] ) ) : '';
+			}
 		}
 
 		$features = array();
@@ -149,6 +169,17 @@ function rr_about_admin_screen() {
 
 			<h2><?php esc_html_e( 'About section', 'realtor-raihan' ); ?></h2>
 			<table class="form-table" role="presentation"><tbody>
+				<tr>
+					<th scope="row"><label for="rr-about-photo"><?php esc_html_e( 'About profile image', 'realtor-raihan' ); ?></label></th>
+					<td>
+						<?php $photo_preview = rr_img( $data['photo'], 'raihan-beach.webp' ); ?>
+						<input type="hidden" id="rr-about-photo" name="rr[photo]" value="<?php echo esc_attr( $data['photo'] ); ?>">
+						<img id="rr-about-photo-preview" src="<?php echo esc_url( $photo_preview ); ?>" alt="" style="display:block;width:220px;height:180px;object-fit:cover;border:1px solid #dcdcde;border-radius:6px;margin:0 0 10px;">
+						<button type="button" class="button" id="rr-about-photo-select"><?php esc_html_e( 'Choose / Replace Image', 'realtor-raihan' ); ?></button>
+						<button type="button" class="button" id="rr-about-photo-remove"><?php esc_html_e( 'Use Default Image', 'realtor-raihan' ); ?></button>
+						<p class="description"><?php esc_html_e( 'Select the image from the WordPress Media Library. It will appear in the About page profile section.', 'realtor-raihan' ); ?></p>
+					</td>
+				</tr>
 				<?php
 				$fields = array(
 					'tag'   => 'Small label',
@@ -220,6 +251,32 @@ function rr_about_admin_screen() {
 
 			<?php submit_button( __( 'Save About page', 'realtor-raihan' ) ); ?>
 		</form>
+
+		<script>
+		jQuery(function ($) {
+			var frame;
+			$('#rr-about-photo-select').on('click', function (event) {
+				event.preventDefault();
+				if (frame) { frame.open(); return; }
+				frame = wp.media({
+					title: '<?php echo esc_js( __( 'Choose About profile image', 'realtor-raihan' ) ); ?>',
+					button: { text: '<?php echo esc_js( __( 'Use this image', 'realtor-raihan' ) ); ?>' },
+					library: { type: 'image' },
+					multiple: false
+				});
+				frame.on('select', function () {
+					var attachment = frame.state().get('selection').first().toJSON();
+					$('#rr-about-photo').val(attachment.id);
+					$('#rr-about-photo-preview').attr('src', attachment.url);
+				});
+				frame.open();
+			});
+			$('#rr-about-photo-remove').on('click', function () {
+				$('#rr-about-photo').val('');
+				$('#rr-about-photo-preview').attr('src', '<?php echo esc_js( RR_URI . '/assets/img/raihan-beach.webp' ); ?>');
+			});
+		});
+		</script>
 	</div>
 	<?php
 }
