@@ -592,3 +592,12 @@
     padding-bottom: 40px !important;
   }
 }
+
+
+/* Slightly increase mobile blog hero breathing room on both sides. */
+@media (max-width: 560px) {
+  .bl-hero {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
