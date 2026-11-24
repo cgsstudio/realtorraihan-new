@@ -2299,7 +2299,6 @@ body .bl-meta-eyebrow {
           }
 
           body.home #intro .s2__inner {
-            padding-top: 32px !important;
             padding-bottom: 24px !important;
           }
 
@@ -2374,7 +2373,6 @@ body .bl-meta-eyebrow {
           }
 
           body.home #intro .s2__inner {
-            padding-top: 24px !important;
             padding-bottom: 24px !important;
           }
 
@@ -2431,61 +2429,5 @@ body .bl-meta-eyebrow {
     flex: 0 1 auto !important;
     padding-top: 28px !important;
     padding-bottom: 32px !important;
-  }
-}
-
-
-/* Mobile homepage intro: reduce the blank space immediately after the hero. */
-@media (max-width: 767px) {
-  body.home #intro .s2__inner {
-    padding-top: 8px !important;
-  }
-
-  body.home #intro .s2__body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
-
-
-/* Strong mobile override: remove the actual intro section's top whitespace. */
-@media (max-width: 767px) {
-  body.home #intro.s2 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  body.home #intro .s2__inner {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  body.home #intro .s2__meta {
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
-  }
-
-  body.home #intro .s2__head {
-    margin-top: 0 !important;
-  }
-}
-
-
-/* Direct fix for the large blank band between the mobile hero and intro heading. */
-@media (max-width: 767px) {
-  body.home #intro .s2__inner {
-    margin-top: -96px !important;
-    padding-top: 0 !important;
-  }
-
-  body.home #intro .s2__meta {
-    display: none !important;
-    margin: 0 !important;
-    height: 0 !important;
-  }
-
-  body.home #intro .s2__head {
-    margin-top: 0 !important;
   }
 }
