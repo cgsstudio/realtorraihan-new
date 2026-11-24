@@ -313,31 +313,26 @@
 /* Header navigation readability */
 .hero__bar .nav a{font-size:16px!important}
 
-/* Compact desktop header typography for screens below 1280px. */
-@media (max-width: 1279px) and (min-width: 1081px) {
-  .hero__bar .brand {
-    font-size: 1.12rem;
+/* Compact desktop header layout up to 1280px: keep every nav item on one line. */
+@media (max-width: 1280px) and (min-width: 1081px) {
+  .hero__bar .hero__barInner { gap: 12px; }
+  .hero__bar .brand { font-size: 1.08rem; gap: 8px; }
+  .hero__bar .brand img.brand__mark { height: 34px; }
+  .hero__bar .nav { flex: 0 1 auto; gap: 8px; white-space: nowrap; }
+  .hero__bar .nav a {
+    font-size: 14px !important;
+    padding: 8px 7px;
+    white-space: nowrap;
   }
-
-  body .hero__bar .nav a {
-    font-size: 0.9rem !important;
-    padding-inline: 10px;
-  }
-
-  .hero__bar .hero__callTx small {
-    font-size: 0.52rem;
-  }
-
-  .hero__bar .hero__callTx span {
-    font-size: 0.76rem;
-  }
-
+  .hero__bar .nav a::after { left: 7px; right: 7px; }
+  .hero__bar .hero__actions { gap: 8px; }
+  .hero__bar .hero__call { gap: 7px; }
+  .hero__bar .hero__call i { width: 34px; height: 34px; }
+  .hero__bar .hero__callTx small { font-size: 0.5rem; }
+  .hero__bar .hero__callTx span { font-size: 0.72rem; }
   .hero__bar .hero__actions .pill--gold {
-    font-size: 0.82rem;
-    padding: 13px 22px;
-  }
-
-  .hero__bar .hero__actions {
-    gap: 12px;
+    font-size: 0.78rem;
+    padding: 12px 17px;
+    white-space: nowrap;
   }
 }
