@@ -255,12 +255,14 @@
 .stat2__label b{font-size:clamp(.94rem,1.05vw,1.02rem);line-height:1.4}
 .stat2__label span{font-size:clamp(.88rem,.95vw,.94rem);line-height:1.65}
 @media(max-width:1040px){.s2__statsGrid{column-gap:30px;row-gap:0}.stat2{padding:24px 22px!important}.stat2:nth-child(odd){border-right:1px solid rgba(13,34,61,.18)}.stat2:nth-child(-n+2){border-bottom:1px solid rgba(13,34,61,.18)}.stat2__label b{font-size:1rem}.stat2__label span{font-size:.9rem}}
-/* Mobile stats: balanced two-column layout with four consistent cards. */
+/* Mobile stats: balanced two-column layout with clear space between cards. */
 @media(max-width:560px){
   .s2__stats > .sec__wrap{padding:24px 18px}
   .s2__statsGrid{
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
+    gap:18px !important;
+    row-gap:18px !important;
+    column-gap:14px !important;
   }
   .s2__statsGrid .stat2{
     min-width:0;
@@ -339,5 +341,30 @@
 @media (max-width: 560px) {
   .s2__stats {
     margin-bottom: 8px !important;
+  }
+}
+
+
+/* Final mobile stats layout override: enforce a true 2-by-2 grid
+   and visible spacing between each card, regardless of generic theme rules. */
+@media (max-width: 560px) {
+  #intro .s2__statsGrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    row-gap: 16px !important;
+    column-gap: 16px !important;
+    align-items: stretch;
+  }
+
+  #intro .s2__statsGrid > .stat2 {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 150px;
+    margin: 0 !important;
+    padding: 18px 10px !important;
+    border: 1px solid rgba(13, 34, 61, .16) !important;
+    border-radius: 12px;
+    box-sizing: border-box;
   }
 }
