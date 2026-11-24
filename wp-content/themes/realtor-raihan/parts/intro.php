@@ -16,7 +16,7 @@ $founder = rr_img( get_theme_mod( 'rr_founder_img', get_option( 'rr_home_intro_i
 <section class="s2" id="intro" aria-labelledby="s2-title">
   <span class="s2__edge" aria-hidden="true"></span>
 
-  <div class="sec__wrap s2__inner">
+  <div class="sec__wrap s2__inner home-mobile-spacing">
 
     <div class="s2__meta">
       <p class="tag"><?php echo esc_html( rr_h( 'intro_tag' ) ); ?></p>
