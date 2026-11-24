@@ -175,3 +175,16 @@
   .fqi__a{opacity:1!important;transform:none!important;transition:none!important}
   .fqi__x::before,.fqi__x::after{transition:none!important}
 }
+
+
+/* Mobile FAQ: make the Ask Me Directly button more compact. */
+@media (max-width: 767px) {
+  .fq__cta {
+    width: 100%;
+    max-width: 280px;
+    min-height: 44px;
+    justify-content: center;
+    justify-self: start;
+    padding-inline: 20px;
+  }
+}
