@@ -649,3 +649,6 @@
 .ct__form .fld select,
 .ct__form .fld textarea { display: block; width: 100%; }
 .ct__form .wpcf7-submit { margin: 0; }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .ct { padding-top: 36px !important; padding-bottom: 36px !important; } }
