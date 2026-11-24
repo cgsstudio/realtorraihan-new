@@ -19,7 +19,8 @@ $paged = max(
 	absint( get_query_var( 'page' ) )
 );
 
-$posts_per_page = 6;
+// Show every published blog post on one page (pagination is disabled).
+$posts_per_page = -1;
 
 $blog_query = new WP_Query(
 	array(
