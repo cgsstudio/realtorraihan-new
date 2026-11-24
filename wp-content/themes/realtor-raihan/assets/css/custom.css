@@ -2030,7 +2030,9 @@ body .bl-meta-eyebrow {
     padding-top: calc(var(--barh, 0px) + clamp(48px, 5.5vw, 76px));
     padding-bottom: var(--rr-section-space);
 
-    /* 3. Blog Page: Titles + List rhythm */
+    }
+
+  /* 3. Blog Page: Titles + List rhythm */
     .bl-titles {
       padding-top: var(--rr-sec-space) !important;
       padding-bottom: clamp(12px, 1.5vw, 18px) !important;
@@ -2064,7 +2066,9 @@ body .bl-meta-eyebrow {
         padding-bottom: var(--rr-sec-space) !important;
       }
 
-      @media (max-width: 560px) {
+    }
+
+    @media (max-width: 560px) {
 
         .sec,
         .s2__stats,
@@ -2090,6 +2094,8 @@ body .bl-meta-eyebrow {
         body.rr-wp .rr-page {
           padding-top: calc(var(--barh, 0px) + 40px);
           padding-bottom: var(--rr-section-space-mobile);
+        }
+
         }
 
         /* 4. Single Post & General Page Content wrapper */
@@ -2411,5 +2417,29 @@ body .bl-meta-eyebrow {
   body.home #intro .s2__stats > .sec__wrap {
     padding-top: 32px !important;
     padding-bottom: 32px !important;
+  }
+}
+
+/* Final mobile spacing rules. Keep these top-level so they override legacy rules. */
+@media (max-width: 767px) {
+  body.home .hero__main {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+
+  body.home #intro .s2__inner {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  body.home .wi,
+  body.home .sv,
+  body.home .ts,
+  body.home .wc,
+  body.home .fq,
+  body.home .ct,
+  body.home .dev-marquee {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
   }
 }
