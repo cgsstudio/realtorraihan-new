@@ -1760,3 +1760,35 @@ body.rr-wp .rr-page {
     padding-bottom: 24px !important;
   }
 }
+
+
+/* Mobile intro section: close the excess gap between Contact Me and the stats. */
+@media (max-width: 767px) {
+  body.home #intro .s2__inner {
+    padding-bottom: 8px !important;
+  }
+
+  body.home #intro .s2__body {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.home #intro .s2__copy {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.home #intro .s2__cta {
+    margin-bottom: 0 !important;
+  }
+
+  body.home #intro .s2__stats > .sec__wrap {
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
+  }
+
+  body.home #intro .stat2 {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+}
