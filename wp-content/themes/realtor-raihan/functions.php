@@ -80,6 +80,7 @@ function rr_assets() {
 
 	// custom.css and custom.js load last, so the client's own CSS/JS wins.
 	$css['rr-custom'] = 'custom.css';
+	$css['rr-home-mobile-spacing'] = 'home-mobile-spacing.css';
 
 	$i = 0;
 	foreach ( $css as $handle => $file ) {
