@@ -601,3 +601,11 @@
     padding-bottom: 50px !important;
   }
 }
+
+/* Mobile blog hero: reduce space above content and add breathing room below. */
+@media (max-width: 560px) {
+  .bl-hero {
+    padding-top: 14px !important;
+    padding-bottom: 66px !important;
+  }
+}
