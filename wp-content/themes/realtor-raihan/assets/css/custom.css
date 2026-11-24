@@ -1695,3 +1695,25 @@ body.rr-wp .rr-page {
     justify-content: center !important;
   }
 }
+
+
+/* Mobile homepage experience stats: align numbers, labels and descriptions left. */
+@media (max-width: 767px) {
+  body.home #intro .s2__statsGrid,
+  body.home #intro .stat2,
+  body.home #intro .stat2__label {
+    justify-items: start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  body.home #intro .stat2__num,
+  body.home #intro .stat2__label b,
+  body.home #intro .stat2__label span {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+}
