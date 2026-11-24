@@ -479,3 +479,10 @@
     margin-bottom: 20px !important;
   }
 }
+
+/* Mobile homepage section spacing */
+.s2 { padding-top: 36px !important; padding-bottom: 36px !important; }
+@media (max-width: 767px) {
+  #intro .s2__inner { padding-top: 28px !important; padding-bottom: 28px !important; }
+  #intro .s2__stats > .sec__wrap { padding-top: 28px !important; padding-bottom: 28px !important; }
+}
