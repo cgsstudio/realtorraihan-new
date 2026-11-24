@@ -276,3 +276,18 @@
     margin-top: 0;
   }
 }
+
+
+/* Mobile section spacing: match the site's regular section rhythm.
+   Higher specificity + !important overrides the generic .s2__inner rule
+   from custom.css without changing other sections or breakpoints. */
+@media (max-width: 767px) {
+  .s2 .s2__inner {
+    padding-top: 24px !important;
+    margin-top: 0 !important;
+  }
+
+  .s2 .s2__meta {
+    margin-bottom: 16px !important;
+  }
+}
