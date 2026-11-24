@@ -51,11 +51,27 @@
   dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
 
   function sizeActiveCard(){
-    var active=cards[cur];
-    if(!active) return;
-    /* Card and track heights are fixed by responsive CSS. */
     var stage=track.closest('.ts__stage');
-    if(stage) stage.style.minHeight='0px';
+    if(!stage) return;
+
+    /* Desktop coverflow: measure every review and give every card the
+       same height, based on the tallest card's natural content height. */
+    if(window.matchMedia('(min-width:1025px)').matches){
+      cards.forEach(function(card){ card.style.height='auto'; });
+      var tallest=0;
+      cards.forEach(function(card){
+        tallest=Math.max(tallest,card.scrollHeight);
+      });
+      cards.forEach(function(card){ card.style.height=tallest+'px'; });
+      track.style.height=tallest+'px';
+      stage.style.minHeight=Math.max(tallest,380)+'px';
+      return;
+    }
+
+    /* Tablet/mobile keeps the existing single-card, content-based layout. */
+    cards.forEach(function(card){ card.style.height=''; });
+    track.style.height='';
+    stage.style.minHeight='0px';
   }
   cards.forEach(function(card){
     var quote=card.querySelector('.tcard__quote');
