@@ -302,3 +302,16 @@
     margin-bottom: 12px !important;
   }
 }
+
+
+/* Mobile only: clearly separate each Why Choose Me accordion row. */
+@media (max-width: 767px) {
+  #why-choose .wc__list {
+    border-top: 1px solid rgba(11, 31, 58, 0.18) !important;
+  }
+
+  #why-choose .wcr {
+    padding: 16px 0 !important;
+    border-bottom: 1px solid rgba(11, 31, 58, 0.18) !important;
+  }
+}
