@@ -89,10 +89,6 @@ $icons = array(
         decoding="async"
       >
     </figure>
-    <div class="ab-license-number" aria-label="Broker license number">
-      <span>Broker Card Number</span>
-      <strong>73393</strong>
-    </div>
     <div class="ab-license-verify">
       <a class="pill pill--gold" href="https://dubailand.gov.ae/en/eservices/licensed-real-estate-brokers/licensed-real-estate-brokers-list/#/" target="_blank" rel="noopener noreferrer">VERIFY MY REAL ESTATE LICENSE <span aria-hidden="true">↗</span></a>
     </div>
