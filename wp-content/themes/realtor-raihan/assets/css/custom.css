@@ -1978,20 +1978,7 @@ body .bl-meta-eyebrow {
   }
 }
 
-/* 1. All standard sections across all pages: identical top and bottom spacing */
-.sec,
-.s2,
-.s2__stats,
-.wi,
-.wi--teaser,
-.sv,
-.ts,
-.wc,
-.fq,
-.ct,
-.dev-marquee,
-.ab-gallery {
-  padding-block: var(--rr-section-space) !important;
+/* Shared section spacing rules */
 
   .ab-us,
   .ab-license-area,
@@ -2401,4 +2388,3 @@ body .bl-meta-eyebrow {
   body.home .wi--teaser .wi__teaserCopy p {
     margin-top: 12px !important;
   }
-}
