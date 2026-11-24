@@ -11,7 +11,7 @@
   if (!rows.length || !shots.length || !num || !lbl || !rail) return;
   var reduce= window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var cur = 0, swapToken = 0;
-  var fixedImage = 'https://bagheeraventures.com/realtorraihan/wp-content/uploads/2026/11/Confident-Executive-at-Sunset-1-2-Photoroom.webp';
+  var fixedImage = 'http://localhost/realtorraihan/wp-content/uploads/2026/11/Confident-Executive-at-Sunset-1-2-Photoroom.webp';
   shots.forEach(function(s,n){
     if (n !== 0) { s.hidden = true; return; }
     var image = s.querySelector('img');
