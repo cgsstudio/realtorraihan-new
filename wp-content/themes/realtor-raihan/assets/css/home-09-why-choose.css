@@ -248,3 +248,15 @@
 
 /* Tablet and mobile use click/tap only; do not activate on hover. */
 @media(max-width:1024px){#why-choose .wcr:hover p{max-height:0!important;opacity:0!important}#why-choose .wcr.is-active p{max-height:220px!important;opacity:1!important;overflow:visible!important;transform:none!important}}
+
+
+/* Mobile: make the Why Choose Me contact button more compact. */
+@media (max-width: 767px) {
+  #why-choose .wc__cta {
+    width: fit-content;
+    max-width: 240px;
+    min-height: 42px;
+    padding-inline: 24px;
+    justify-self: start;
+  }
+}
