@@ -2446,3 +2446,27 @@ body .bl-meta-eyebrow {
     padding-top: 0 !important;
   }
 }
+
+
+/* Strong mobile override: remove the actual intro section's top whitespace. */
+@media (max-width: 767px) {
+  body.home #intro.s2 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body.home #intro .s2__inner {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body.home #intro .s2__meta {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.home #intro .s2__head {
+    margin-top: 0 !important;
+  }
+}
