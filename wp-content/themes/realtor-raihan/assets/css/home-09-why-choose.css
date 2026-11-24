@@ -315,3 +315,6 @@
     border-bottom: 1px solid rgba(11, 31, 58, 0.18) !important;
   }
 }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .wc { padding-top: 36px !important; padding-bottom: 36px !important; } }
