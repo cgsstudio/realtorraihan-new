@@ -1589,3 +1589,29 @@ body.rr-wp .rr-page {
     margin-top: 22px !important;
   }
 }
+
+
+/* Mobile only: center-align all text in the Why Choose Me section. */
+@media (max-width: 767px) {
+  body.home #why-choose .wc__wrap,
+  body.home #why-choose .wc__head,
+  body.home #why-choose .wc__head h2,
+  body.home #why-choose .wc__list,
+  body.home #why-choose .wcr,
+  body.home #why-choose .wcr__main,
+  body.home #why-choose .wcr h3,
+  body.home #why-choose .wcr p {
+    text-align: center !important;
+  }
+
+  body.home #why-choose .wc__head,
+  body.home #why-choose .wcr__main {
+    justify-items: center !important;
+    align-items: center !important;
+  }
+
+  body.home #why-choose .wc__cta {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
