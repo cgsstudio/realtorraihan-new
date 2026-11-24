@@ -301,9 +301,9 @@
 }
 
 
-/* Mobile only: reduce the gap after the stats section by 15px. */
+/* Mobile only: tighten the gap after the stats section a little more. */
 @media (max-width: 560px) {
   .s2__stats {
-    margin-bottom: 15px !important;
+    margin-bottom: 8px !important;
   }
 }
