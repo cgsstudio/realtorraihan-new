@@ -1644,3 +1644,23 @@ body.rr-wp .rr-page {
     margin-top: 34px !important;
   }
 }
+
+
+/* Mobile Why Choose Me: left-align the heading and benefit text. */
+@media (max-width: 767px) {
+  body.home #why-choose .wc__head,
+  body.home #why-choose .wc__head h2,
+  body.home #why-choose .wc__list,
+  body.home #why-choose .wcr,
+  body.home #why-choose .wcr__main,
+  body.home #why-choose .wcr h3,
+  body.home #why-choose .wcr p {
+    text-align: left !important;
+  }
+
+  body.home #why-choose .wc__head,
+  body.home #why-choose .wcr__main {
+    justify-items: start !important;
+    align-items: flex-start !important;
+  }
+}
