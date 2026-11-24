@@ -1842,3 +1842,12 @@ body.rr-wp .rr-page {
     margin-top: 12px !important;
   }
 }
+
+
+/* Mobile homepage hero: add more breathing room above and below the content. */
+@media (max-width: 767px) {
+  body.home .hero__main {
+    padding-top: 56px !important;
+    padding-bottom: 72px !important;
+  }
+}
