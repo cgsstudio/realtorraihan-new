@@ -583,3 +583,12 @@
     margin-block: 0 !important;
   }
 }
+
+
+/* Mobile blog hero: provide balanced breathing room above and below content. */
+@media (max-width: 560px) {
+  .bl-hero {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
