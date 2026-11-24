@@ -299,3 +299,11 @@
     margin-top: -30px !important;
   }
 }
+
+
+/* Mobile only: reduce the gap after the stats section by 15px. */
+@media (max-width: 560px) {
+  .s2__stats {
+    margin-bottom: 15px !important;
+  }
+}
