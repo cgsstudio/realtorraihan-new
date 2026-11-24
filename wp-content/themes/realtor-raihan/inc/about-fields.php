@@ -306,7 +306,7 @@ function rr_about_admin_screen() {
 			});
 			$('#rr-license-image-remove').on('click', function () {
 				$('#rr-license-image').val('');
-				$('#rr-license-image-preview').attr('src', '<?php echo esc_js( RR_URI . '/assets/img/raihan-beach.webp' ); ?>');
+				$('#rr-license-image-preview').attr('src', '<?php echo esc_js( home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' ) ); ?>');
 			});
 			$('#rr-about-photo-remove').on('click', function () {
 				$('#rr-about-photo').val('');
