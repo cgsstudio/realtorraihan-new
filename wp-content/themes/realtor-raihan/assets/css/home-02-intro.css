@@ -473,10 +473,9 @@
 }
 
 
-/* Desktop only: reduce the empty space below the intro stats before
-   the following section. Tablet and mobile spacing remain unchanged. */
+/* Desktop only: tighten the space below intro stats. */
 @media (min-width: 1025px) {
   .s2__stats {
-    margin-bottom: 40px !important;
+    margin-bottom: 20px !important;
   }
 }
