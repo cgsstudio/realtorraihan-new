@@ -43,6 +43,7 @@ function rr_about_defaults() {
 		'close_p'    => 'One call, no pitch. Bring your budget and your timeline. I will bring the numbers.',
 		'close_btn'  => 'Book a free consultation',
 		'close_wa'   => 'WhatsApp me',
+		'license_image' => home_url( '/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-20-at-6.03.08-PM-1-scaled.png' ),
 	);
 }
 
@@ -109,7 +110,7 @@ add_action(
 			if ( 'features' === $key ) {
 				continue;
 			}
-			if ( 'photo' === $key ) {
+			if ( in_array( $key, array( 'photo', 'license_image' ), true ) ) {
 				$photo_value   = isset( $posted[ $key ] ) ? trim( (string) $posted[ $key ] ) : '';
 				$clean[ $key ] = ctype_digit( $photo_value ) ? absint( $photo_value ) : esc_url_raw( $photo_value );
 			} else {
@@ -201,6 +202,21 @@ function rr_about_admin_screen() {
 				?>
 			</tbody></table>
 
+			<h2><?php esc_html_e( 'Dubai Real Estate License', 'realtor-raihan' ); ?></h2>
+			<table class="form-table" role="presentation"><tbody>
+				<tr>
+					<th scope="row"><label for="rr-license-image"><?php esc_html_e( 'License image', 'realtor-raihan' ); ?></label></th>
+					<td>
+						<?php $license_preview = rr_img( $data['license_image'] ); ?>
+						<input type="hidden" id="rr-license-image" name="rr[license_image]" value="<?php echo esc_attr( $data['license_image'] ); ?>">
+						<img id="rr-license-image-preview" src="<?php echo esc_url( $license_preview ); ?>" alt="" style="display:block;width:260px;height:auto;max-height:220px;object-fit:contain;border:1px solid #dcdcde;border-radius:6px;background:#fff;padding:6px;margin:0 0 10px;">
+						<button type="button" class="button" id="rr-license-image-select"><?php esc_html_e( 'Choose / Replace License Image', 'realtor-raihan' ); ?></button>
+						<button type="button" class="button" id="rr-license-image-remove"><?php esc_html_e( 'Use Default Image', 'realtor-raihan' ); ?></button>
+						<p class="description"><?php esc_html_e( 'This image appears directly below the Dubai Real Estate License heading on the public About page.', 'realtor-raihan' ); ?></p>
+					</td>
+				</tr>
+			</tbody></table>
+
 			<h2><?php esc_html_e( 'Why choose us section', 'realtor-raihan' ); ?></h2>
 			<table class="form-table" role="presentation"><tbody>
 				<?php
@@ -270,6 +286,27 @@ function rr_about_admin_screen() {
 					$('#rr-about-photo-preview').attr('src', attachment.url);
 				});
 				frame.open();
+			});
+			var licenseFrame;
+			$('#rr-license-image-select').on('click', function (event) {
+				event.preventDefault();
+				if (licenseFrame) { licenseFrame.open(); return; }
+				licenseFrame = wp.media({
+					title: '<?php echo esc_js( __( 'Choose Dubai real estate license image', 'realtor-raihan' ) ); ?>',
+					button: { text: '<?php echo esc_js( __( 'Use this license image', 'realtor-raihan' ) ); ?>' },
+					library: { type: 'image' },
+					multiple: false
+				});
+				licenseFrame.on('select', function () {
+					var attachment = licenseFrame.state().get('selection').first().toJSON();
+					$('#rr-license-image').val(attachment.id);
+					$('#rr-license-image-preview').attr('src', attachment.url);
+				});
+				licenseFrame.open();
+			});
+			$('#rr-license-image-remove').on('click', function () {
+				$('#rr-license-image').val('');
+				$('#rr-license-image-preview').attr('src', '<?php echo esc_js( RR_URI . '/assets/img/raihan-beach.webp' ); ?>');
 			});
 			$('#rr-about-photo-remove').on('click', function () {
 				$('#rr-about-photo').val('');
