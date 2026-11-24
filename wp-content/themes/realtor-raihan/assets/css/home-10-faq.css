@@ -233,3 +233,6 @@
     display: none !important;
   }
 }
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .fq { padding-top: 36px !important; padding-bottom: 36px !important; } }
