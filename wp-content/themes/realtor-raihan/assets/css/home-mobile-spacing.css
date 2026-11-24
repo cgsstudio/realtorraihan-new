@@ -1,0 +1,7 @@
+/* Dedicated mobile spacing overrides for the homepage intro section. */
+@media (max-width: 767px) {
+  body.home #intro .home-mobile-spacing {
+    box-sizing: border-box !important;
+    padding: 52px 20px 44px !important;
+  }
+}
