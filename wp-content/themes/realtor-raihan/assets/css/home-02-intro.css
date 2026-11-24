@@ -255,7 +255,41 @@
 .stat2__label b{font-size:clamp(.94rem,1.05vw,1.02rem);line-height:1.4}
 .stat2__label span{font-size:clamp(.88rem,.95vw,.94rem);line-height:1.65}
 @media(max-width:1040px){.s2__statsGrid{column-gap:30px;row-gap:0}.stat2{padding:24px 22px!important}.stat2:nth-child(odd){border-right:1px solid rgba(13,34,61,.18)}.stat2:nth-child(-n+2){border-bottom:1px solid rgba(13,34,61,.18)}.stat2__label b{font-size:1rem}.stat2__label span{font-size:.9rem}}
-@media(max-width:560px){.s2__statsGrid{grid-template-columns:1fr;gap:0}.stat2{padding:22px 4px!important;border-right:0!important;border-bottom:1px solid rgba(13,34,61,.18)}.stat2:last-child{border-bottom:0}.stat2__num{font-size:2.9rem}.stat2__label b{font-size:1rem}.stat2__label span{font-size:.92rem}}
+/* Mobile stats: balanced two-column layout with four consistent cards. */
+@media(max-width:560px){
+  .s2__stats > .sec__wrap{padding:24px 18px}
+  .s2__statsGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .s2__statsGrid .stat2{
+    min-width:0;
+    min-height:148px;
+    padding:18px 10px!important;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:9px;
+    border:1px solid rgba(13,34,61,.14)!important;
+    border-radius:12px;
+    background:rgba(255,255,255,.42);
+  }
+  .s2__statsGrid .stat2__num{
+    min-width:0;
+    font-size:2.45rem;
+  }
+  .s2__statsGrid .stat2__label{width:100%}
+  .s2__statsGrid .stat2__label b{
+    margin-bottom:5px;
+    font-size:.9rem;
+    line-height:1.3;
+  }
+  .s2__statsGrid .stat2__label span{
+    max-width:none;
+    font-size:.8rem;
+    line-height:1.45;
+  }
+}
 
 
 /* Mobile: keep a controlled, natural gap before the intro content. */
