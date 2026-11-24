@@ -1717,3 +1717,46 @@ body.rr-wp .rr-page {
     text-align: left !important;
   }
 }
+
+
+/* Mobile homepage: tighten the intro-to-stats gap and use one spacing rhythm
+   across every main section. */
+@media (max-width: 767px) {
+  body.home {
+    --rr-section-space-mobile: 32px;
+  }
+
+  body.home .wi,
+  body.home .sv,
+  body.home .ts,
+  body.home .wc,
+  body.home .fq,
+  body.home .ct,
+  body.home .dev-marquee {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  body.home #intro .s2__inner {
+    padding-top: 32px !important;
+    padding-bottom: 24px !important;
+  }
+
+  body.home #intro .s2__body {
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  body.home #intro .s2__media {
+    display: none !important;
+  }
+
+  body.home #intro .s2__stats {
+    margin: 0 !important;
+  }
+
+  body.home #intro .s2__stats > .sec__wrap {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+}
