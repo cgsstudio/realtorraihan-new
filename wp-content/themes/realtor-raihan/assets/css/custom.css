@@ -1560,3 +1560,32 @@ body.rr-wp .rr-page {
     padding-bottom: var(--rr-section-space-mobile);
   }
 }
+
+
+/* Mobile only: move the Why Choose Me CTA below all benefit rows. */
+@media (max-width: 767px) {
+  body.home #why-choose .wc__wrap {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.home #why-choose .wc__head {
+    display: contents !important;
+  }
+
+  body.home #why-choose .wc__head > h2 {
+    order: 1 !important;
+  }
+
+  body.home #why-choose .wc__grid {
+    order: 2 !important;
+  }
+
+  body.home #why-choose .wc__cta {
+    order: 3 !important;
+    align-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 22px !important;
+  }
+}
