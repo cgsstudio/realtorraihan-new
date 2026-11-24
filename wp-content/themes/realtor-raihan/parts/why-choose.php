@@ -36,8 +36,14 @@ $shots = array(
       <!-- left: sticky photograph stack -->
       <div class="wc__media rv" aria-hidden="true">
         <?php foreach ( $shots as $i => $shot ) : ?>
+          <?php
+          // The requested photo is the permanent visible image in this section.
+          $image_url = 0 === $i
+            ? 'http://localhost/realtorraihan/wp-content/uploads/2026/11/Confident-Executive-at-Sunset-1-2-Photoroom.webp'
+            : get_theme_mod( 'rr_wc_shot_' . ( $i + 1 ), RR_URI . '/assets/img/' . $shot[0] );
+          ?>
           <figure class="wc__shot<?php echo 0 === $i ? ' is-on' : ''; ?>" data-shot="<?php echo (int) $i; ?>">
-            <img src="<?php echo esc_url( get_theme_mod( 'rr_wc_shot_' . ( $i + 1 ), RR_URI . '/assets/img/' . $shot[0] ) ); ?>" alt="" width="<?php echo (int) $shot[1]; ?>" height="<?php echo (int) $shot[2]; ?>" loading="lazy" decoding="async">
+            <img src="<?php echo esc_url( $image_url ); ?>" alt="" width="<?php echo (int) $shot[1]; ?>" height="<?php echo (int) $shot[2]; ?>" loading="lazy" decoding="async">
           </figure>
         <?php endforeach; ?>
 
