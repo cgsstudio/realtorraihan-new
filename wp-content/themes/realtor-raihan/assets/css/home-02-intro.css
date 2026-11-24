@@ -448,3 +448,26 @@
     transform: translateY(20px) !important;
   }
 }
+
+
+/* Mobile stats: use one clean column; remove all zig-zag offsets. */
+@media (max-width: 560px) {
+  #intro .s2__statsGrid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 14px !important;
+    row-gap: 14px !important;
+    padding-bottom: 0 !important;
+  }
+
+  #intro .s2__statsGrid > .stat2,
+  #intro .s2__statsGrid > .stat2:nth-child(odd),
+  #intro .s2__statsGrid > .stat2:nth-child(even) {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 145px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+}
