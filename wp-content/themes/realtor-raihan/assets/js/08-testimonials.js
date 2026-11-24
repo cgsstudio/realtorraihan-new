@@ -54,23 +54,38 @@
     var stage=track.closest('.ts__stage');
     if(!stage) return;
 
-    /* Desktop coverflow: measure every review and give every card the
-       same height, based on the tallest card's natural content height. */
     if(window.matchMedia('(min-width:1025px)').matches){
-      cards.forEach(function(card){ card.style.height='auto'; });
+      /* Reset every card before measuring its natural content height.
+         Measure rendered height (not scrollHeight) after fonts/layout settle,
+         then apply one shared pixel height to every slide. */
+      cards.forEach(function(card){
+        card.style.height='auto';
+        card.style.minHeight='0';
+      });
+
       var tallest=0;
       cards.forEach(function(card){
-        tallest=Math.max(tallest,card.scrollHeight);
+        tallest=Math.max(tallest,Math.ceil(card.getBoundingClientRect().height));
       });
-      cards.forEach(function(card){ card.style.height=tallest+'px'; });
+
+      tallest=Math.max(tallest,1);
+      cards.forEach(function(card){
+        card.style.height=tallest+'px';
+        card.style.minHeight=tallest+'px';
+      });
       track.style.height=tallest+'px';
+      track.style.minHeight=tallest+'px';
       stage.style.minHeight=Math.max(tallest,380)+'px';
       return;
     }
 
     /* Tablet/mobile keeps the existing single-card, content-based layout. */
-    cards.forEach(function(card){ card.style.height=''; });
+    cards.forEach(function(card){
+      card.style.height='';
+      card.style.minHeight='';
+    });
     track.style.height='';
+    track.style.minHeight='';
     stage.style.minHeight='0px';
   }
   cards.forEach(function(card){
@@ -155,5 +170,11 @@
   layout();
   cards.forEach(function(c){if(c._checkReview)c._checkReview();});
   sizeActiveCard();
+  /* Re-measure after web fonts and final page layout are ready so every
+     card receives the same height using its actual rendered text wrapping. */
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(sizeActiveCard);
+  }
+  window.addEventListener('load',sizeActiveCard,{once:true});
   restart();
 })();
