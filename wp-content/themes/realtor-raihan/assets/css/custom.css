@@ -2470,3 +2470,22 @@ body .bl-meta-eyebrow {
     margin-top: 0 !important;
   }
 }
+
+
+/* Direct fix for the large blank band between the mobile hero and intro heading. */
+@media (max-width: 767px) {
+  body.home #intro .s2__inner {
+    margin-top: -96px !important;
+    padding-top: 0 !important;
+  }
+
+  body.home #intro .s2__meta {
+    display: none !important;
+    margin: 0 !important;
+    height: 0 !important;
+  }
+
+  body.home #intro .s2__head {
+    margin-top: 0 !important;
+  }
+}
