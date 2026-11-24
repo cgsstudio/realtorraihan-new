@@ -471,3 +471,12 @@
     transform: none !important;
   }
 }
+
+
+/* Desktop only: reduce the empty space below the intro stats before
+   the following section. Tablet and mobile spacing remain unchanged. */
+@media (min-width: 1025px) {
+  .s2__stats {
+    margin-bottom: 40px !important;
+  }
+}
