@@ -847,3 +847,6 @@
 /* Services section background image removed */
 .sv__bg{display:none!important;}
 .sv{background:#EDEAE1!important;}
+
+/* Mobile homepage section spacing */
+@media (max-width: 767px) { .sv { padding-top: 36px !important; padding-bottom: 36px !important; } }
