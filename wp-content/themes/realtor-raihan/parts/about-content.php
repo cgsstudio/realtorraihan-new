@@ -76,11 +76,19 @@ $icons = array(
   </div>
 </section>
 
-<!-- Broker credential: number and official verification only -->
+<!-- Dubai real estate license -->
 <section class="ab-license-area" aria-labelledby="ab-license-title">
   <div class="ab-license-wrap">
     <p class="tag">OFFICIAL CREDENTIAL</p>
-    <h2 id="ab-license-title">Dubai Real Estate Broker</h2>
+    <h2 id="ab-license-title">Dubai Real Estate License</h2>
+    <figure class="ab-license-frame">
+      <img
+        src="<?php echo esc_url( rr_img( $a['license_image'] ) ); ?>"
+        alt="<?php esc_attr_e( 'Dubai real estate broker license document', 'realtor-raihan' ); ?>"
+        loading="lazy"
+        decoding="async"
+      >
+    </figure>
     <div class="ab-license-number" aria-label="Broker license number">
       <span>Broker Card Number</span>
       <strong>73393</strong>
