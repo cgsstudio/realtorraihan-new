@@ -1952,7 +1952,8 @@ body .bl-meta-eyebrow {
   --rr-section-space: clamp(64px, 6.5vw, 96px);
   --rr-section-space-tablet: 56px;
   --rr-section-space-mobile: 44px;
-  --rr-sec-space: clamp(68px, 6vw, 92px);
+  --rr-sec-space: clamp(68px, 6vw, 70px);
+  --rr-sec-inner-gap: clamp(20px, 2.5vw, 32px);
   --rr-sec-inner-gap: clamp(20px, 2.5vw, 32px);
 }
 
