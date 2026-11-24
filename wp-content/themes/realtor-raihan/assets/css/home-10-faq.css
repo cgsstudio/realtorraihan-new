@@ -225,3 +225,11 @@
     margin-top: 22px;
   }
 }
+
+
+/* Desktop: hide only the duplicate CTA placed below the FAQ list. */
+@media (min-width: 768px) {
+  .fq .fq__cta.fq__cta--after-list {
+    display: none !important;
+  }
+}
