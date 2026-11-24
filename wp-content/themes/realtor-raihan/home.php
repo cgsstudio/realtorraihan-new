@@ -134,26 +134,6 @@ $hero_img = ! empty( $b['hero_img'] ) ? $b['hero_img'] : get_theme_mod( 'rr_blog
           <p><?php echo esc_html( isset( $b['empty_msg'] ) ? $b['empty_msg'] : 'No articles yet. Add your first one under Posts.' ); ?></p>
       <?php endif; ?>
     </div>
-
-    <?php if ( $blog_query->max_num_pages > 1 ) : ?>
-      <div class="bl-pager">
-        <?php
-        echo paginate_links(
-            array(
-                // Build pagination URLs from the current Blog archive URL.
-                // This keeps /blog/page/2/ working with the custom WP_Query.
-                'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                'format'    => ( get_option( 'permalink_structure' ) ? 'page/%#%/' : '?paged=%#%' ),
-                'total'     => (int) $blog_query->max_num_pages,
-                'current'   => $paged,
-                'mid_size'  => 1,
-                'prev_text' => esc_html__( 'Previous', 'realtor-raihan' ),
-                'next_text' => esc_html__( 'Next', 'realtor-raihan' ),
-            )
-        );
-        ?>
-      </div>
-    <?php endif; ?>
     <?php wp_reset_postdata(); ?>
   </div>
 </section>
