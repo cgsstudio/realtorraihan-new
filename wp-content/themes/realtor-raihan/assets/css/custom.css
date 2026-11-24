@@ -1476,3 +1476,87 @@ body .rr-faq-eyebrow,body .bl-meta-eyebrow{display:none!important}
   }
 }
 
+
+
+/* ============================================================
+   GLOBAL SECTION SPACING NORMALIZATION
+   Keeps the existing layouts and component styling intact.
+   Only standardizes vertical spacing between page sections.
+   ============================================================ */
+:root {
+  --rr-section-space: clamp(64px, 6.5vw, 96px);
+  --rr-section-space-tablet: 56px;
+  --rr-section-space-mobile: 44px;
+}
+
+/* Shared section system */
+.sec,
+.s2,
+.s2__stats,
+.wi,
+.sv,
+.ts,
+.wc,
+.fq,
+.ct,
+.dev-marquee,
+.ab-gallery {
+  padding-block: var(--rr-section-space) !important;
+}
+
+/* Sections whose inner wrapper owns the vertical spacing */
+.s2 { padding-block: 0 !important; }
+.s2__stats > .sec__wrap {
+  padding-block: var(--rr-section-space) !important;
+}
+
+/* Keep page-template content pages on the same vertical rhythm */
+body.rr-wp .rr-page {
+  padding-top: calc(var(--barh, 0px) + clamp(48px, 5.5vw, 76px));
+  padding-bottom: var(--rr-section-space);
+}
+
+@media (max-width: 1024px) {
+  .sec,
+  .s2__stats,
+  .wi,
+  .sv,
+  .ts,
+  .wc,
+  .fq,
+  .ct,
+  .dev-marquee,
+  .ab-gallery {
+    padding-block: var(--rr-section-space-tablet) !important;
+  }
+
+  .s2 { padding-block: 0 !important; }
+  .s2__stats > .sec__wrap {
+    padding-block: var(--rr-section-space-tablet) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .sec,
+  .s2__stats,
+  .wi,
+  .sv,
+  .ts,
+  .wc,
+  .fq,
+  .ct,
+  .dev-marquee,
+  .ab-gallery {
+    padding-block: var(--rr-section-space-mobile) !important;
+  }
+
+  .s2 { padding-block: 0 !important; }
+  .s2__stats > .sec__wrap {
+    padding-block: var(--rr-section-space-mobile) !important;
+  }
+
+  body.rr-wp .rr-page {
+    padding-top: calc(var(--barh, 0px) + 40px);
+    padding-bottom: var(--rr-section-space-mobile);
+  }
+}
