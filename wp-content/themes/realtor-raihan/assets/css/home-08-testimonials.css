@@ -33,14 +33,15 @@
 .tcard__stars{display:flex;gap:3px;color:var(--gold)}
 .tcard__stars svg{width:14px;height:14px}
 .tcard__no{font-family:var(--display);font-size:.72rem;letter-spacing:.14em;color:var(--gold);font-variant-numeric:tabular-nums}
-.tcard blockquote,.tcard__quote{margin:0;color:#fff;font-family:var(--body);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:0;overflow-wrap:anywhere}
+.tcard blockquote,.tcard__quote{margin:0;color:#fff;font-family:var(--body);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:0;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.tcard__quote.is-expanded{display:block;-webkit-line-clamp:unset;overflow:visible}
 .tcard__foot{display:flex;align-items:center;gap:12px;padding-top:14px;margin-top:auto;border-top:1px solid rgba(255,255,255,.12);flex:none}
 .tcard__av{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-size:.9rem;color:var(--gold);border:1px solid rgba(200,163,77,.4);background:rgba(200,163,77,.08)}
 img.tcard__av{object-fit:cover;border:0!important;display:block}
 .tcard[data-pos="0"] .tcard__av{background:var(--gold);color:var(--navy);border-color:var(--gold)}
 .tcard__nm{font-size:14px;font-weight:600;color:#fff;line-height:1.35}
 .tcard__rl{font-size:12px;line-height:1.4;color:var(--gold);margin-top:3px}
-.tcard__readmore{display:none;align-self:flex-start;position:relative;z-index:8;align-items:center;justify-content:center;min-height:36px;padding:7px 16px;border:1px solid rgba(200,163,77,.65);border-radius:999px;background:rgba(200,163,77,.10);color:var(--gold);font:600 12px/1.2 var(--body,Arial,sans-serif);cursor:pointer}
+.tcard__readmore{display:inline-flex;align-self:flex-start;position:relative;z-index:8;align-items:center;justify-content:center;min-height:36px;padding:7px 16px;border:1px solid rgba(200,163,77,.65);border-radius:999px;background:rgba(200,163,77,.10);color:var(--gold);font:600 12px/1.2 var(--body,Arial,sans-serif);cursor:pointer}
 .tcard__readmore[hidden]{display:none!important}
 .ts__arrow{position:absolute;z-index:10;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(11,31,58,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;transition:background .3s,border-color .3s,color .3s,transform .3s}
 .ts__arrow:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:translateY(-50%) scale(1.06)}
@@ -64,9 +65,6 @@ img.tcard__av{object-fit:cover;border:0!important;display:block}
   .ts .tcard{grid-area:1/1;position:absolute;top:0;left:0;width:100%;max-width:100%;height:auto;min-height:0;margin:0;padding:26px 24px;gap:14px;transform:none!important;box-sizing:border-box}
   .ts .tcard[data-pos="0"]{position:relative;z-index:5;opacity:1;filter:none;pointer-events:auto;box-shadow:0 20px 44px -26px rgba(0,0,0,.7)}
   .ts .tcard:not([data-pos="0"]){z-index:0;opacity:0;filter:none;pointer-events:none}
-  .ts .tcard__quote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden}
-  .ts .tcard__quote.is-expanded{display:block;-webkit-line-clamp:unset;overflow:visible}
-  .ts .tcard__readmore:not([hidden]){display:inline-flex}
   .ts__arrow{top:auto;bottom:0;transform:none;width:48px;height:48px}
   .ts__arrow:hover{transform:scale(1.05)}
   .ts__arrow--prev{left:calc(50% - 56px);right:auto}
