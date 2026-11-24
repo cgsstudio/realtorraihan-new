@@ -742,3 +742,22 @@
     line-height: 1.65;
   }
 }
+
+
+/* Mobile only: slightly enlarge all main hero copy for better readability. */
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: clamp(2.4rem, 9vw, 2.7rem) !important;
+    line-height: 1.04;
+  }
+
+  .hero__say {
+    font-size: 1.2rem !important;
+    line-height: 1.45;
+  }
+
+  .hero__lede {
+    font-size: 1.08rem !important;
+    line-height: 1.68;
+  }
+}
