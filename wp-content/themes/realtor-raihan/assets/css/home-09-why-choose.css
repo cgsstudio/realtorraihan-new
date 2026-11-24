@@ -5,7 +5,6 @@
 #why-choose .wc__shot:first-child { display: block !important; opacity: 1 !important; transform: none !important; }
 #why-choose .wc__shot:first-child img { display: block !important; opacity: 1 !important; visibility: visible !important; }
 #why-choose .wc__shot:not(:first-child) { display: none !important; }
-#why-choose .wc__rail { display: none !important; }
 
 
 /* Fixed Why Choose Me photo: one image for the full section, no slide rail. */
@@ -148,7 +147,7 @@
 }
 
 /* ---------------- reveals ---------------- */
-.wc .ln{display:block;overflow:hidden;padding-bottom:.07em}
+.wc .ln{display:block;overflow:hidden;padding-bottom:.06em}
 .wc .ln > span{display:block;transform:translateY(110%);
   transition:transform 1.15s var(--ease-out)}
 .wc .ln.is-in > span{transform:none}
@@ -164,7 +163,6 @@
   .wc .rv{opacity:1!important;transform:none!important;transition:none!important}
   .wcr p{max-height:none!important;opacity:1!important;transform:none!important;
     transition:none!important}
-  .wc__shot{transition:none!important}
 }
 
 /* Why Choose Me: keep benefit descriptions at 16px */
@@ -273,5 +271,25 @@
     align-self: flex-start !important;
     flex: 0 0 auto !important;
     box-sizing: border-box !important;
+  }
+}
+
+/* Mobile only: place the Contact Me CTA after all benefit rows.
+   Desktop and tablet layout remain exactly as before. */
+@media (max-width: 767px) {
+  #why-choose .wc__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #why-choose .wc__head,
+  #why-choose .wc__grid {
+    display: contents;
+  }
+  #why-choose .wc__list {
+    order: 2;
+  }
+  #why-choose .wc__cta {
+    order: 3;
+    margin-top: 22px;
   }
 }
