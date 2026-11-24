@@ -1624,3 +1624,14 @@ body.rr-wp .rr-page {
     height: auto !important;
   }
 }
+
+
+/* Mobile homepage hero: reduce the empty space above the heading and move
+   that breathing room below the hero content instead. */
+@media (max-width: 767px) {
+  body.home .hero__main {
+    align-items: flex-start !important;
+    padding-top: 12px !important;
+    padding-bottom: 48px !important;
+  }
+}
