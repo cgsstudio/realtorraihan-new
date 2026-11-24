@@ -258,17 +258,18 @@
 @media(max-width:560px){.s2__statsGrid{grid-template-columns:1fr;gap:0}.stat2{padding:22px 4px!important;border-right:0!important;border-bottom:1px solid rgba(13,34,61,.18)}.stat2:last-child{border-bottom:0}.stat2__num{font-size:2.9rem}.stat2__label b{font-size:1rem}.stat2__label span{font-size:.92rem}}
 
 
-/* Mobile: remove the oversized gap between the hero and intro heading. */
+/* Mobile: keep a controlled, natural gap before the intro content. */
 @media (max-width: 767px) {
   .s2__inner {
-    margin-top: -96px;
-    padding-top: 0;
+    margin-top: 0;
+    padding-top: 28px;
   }
 
   .s2__meta {
-    display: none;
-    margin: 0;
-    height: 0;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 16px;
+    height: auto;
   }
 
   .s2__head {
