@@ -568,3 +568,18 @@
   margin-right: auto !important;
   text-align: center !important;
 }
+
+
+/* Mobile blog hero: remove excess vertical space above and below the copy. */
+@media (max-width: 560px) {
+  .bl-hero {
+    min-height: 0 !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    align-items: center !important;
+  }
+
+  .bl-hero__wrap {
+    margin-block: 0 !important;
+  }
+}
